@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang = "de"> 
+<head> 
+
+<title> Groede | Ferienhaus | Familie Gosses und Haarbeck | Kontakt   </title>
+
+<meta name = charset = "UTF-8" >
+<meta name = "describion" content = "Ferienhaus Groede">
+<meta name = "keywords" content = "Ferienhaus, Groede, Urlaub">
+<meta name = "author"  content = "Niklas Haarbeck">
+
+<!-- evtl nicht nötig --> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 111111111111111!!!!!!! css files von bootstrap runterladen und auf host server instllieren, weil sonst besucher daten an cnn weitergeleitet werden!!!!!!!!!!!!!!!!!!!!!!!!11-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+<script src = "mein_externes_Js.js"></script>
+
+<link rel = "stylesheet" href = "style.css" >
+
+
+
+</head>
+
+<body > 
+
+
+<nav>
+
+
+<div class="topnav">
+  <a class="active" href="index.html">Startseite</a>
+  <a href="haus.html">Haus</a>
+  <a href="preisrechner.html">Preisrechner</a>
+  <a href="belegung.html">Belegung</a>
+  <a href = "anfrage.html">Anfrage</a>
+</div>
+
+
+
+</nav>
+
+<br> 	 
+
+
+<!--<section class="container" id="alets">
+    <div class="alert alert-success" role="alert">
+        Anfrage versendet!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="alert alert-danger" role="alert">
+        Fehler beim versenden der Anfrage
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</section>
+-->
+<section class="container" id="contactForm">
+    <div class="card">
+        <div class="card-header">
+            Kontaktformular
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="row form-group">
+                    <div class="col-2">
+                        Anrede:
+                    </div>
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input name="salutation" id="salutationMrs" class="form-check-input" type="radio" value="mrs"><label class="form-check-label" for="salutationMrs"> Frau</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input name="salutation" id="salutationMr" class="form-check-input" type="radio" value="mr"><label class="form-check-label" for="salutationMr"> Herr</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="name">
+                        Name:
+                    </label>
+                    <div class="col">
+                        <input type="text" name="name" id="name" placeholder="Name" class="form-control">
+                    </div>
+                </div>
+				
+				<div class="row form-group">
+                    <label class="col-2 col-form-label" for="email">
+                        Email:
+                    </label>
+                    <div class="col">
+                        <input type="email" name="name" id="emailName" placeholder="meine@email.de" class="form-control">
+                    </div>
+                </div>
+				
+				
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="subject">
+                        Betreff:
+                    </label>
+                    <div class="col">
+                        <select id="subject" name="subject" class="form-control">
+                            <option>Bitte wählen</option>
+                            <option value="business">Buchungsanfrage</option
+                            <option value="business">Geschäftsanfrage</option>
+                            <option value="others">Sonstiges</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="message">
+                        Nachricht:
+                    </label>
+                    <div class="col">
+                        <textarea id="message" class="form-c	ontrol" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row form-check">
+                    <div class="offset-2 col">
+                        <input type="checkbox" name="robot" id="robot" class="form-check-input">
+                        <label for="robot" class="form-check-label">Hiermit bestätige ich, dass ich ein Roboter bin.</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Anfrage senden</button>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+
+<!-- footer einbinden 
+
+
+<section class = container id = contactform> 
+
+<form method = "post">
+<div class="card">
+  <div class "card-header"> Kontaktformular </div>
+  <div class="card-body"> 
+  
+  <div class = "row form-group"> 
+	<div class = "col-2"> Anrede </div>
+		<div class = "col"> 
+			<input name = "salutation" type="radio" id= "salutationMrs" value="mrs"> <label for ="salutationMrs> Frau </label> 
+			<input name = "salutation" type="radio" id= "salutationMr" value="mr"> <label for ="salutationMr>Herr </label>
+	</div></div>
+		</div>
+
+  </div>
+    
+  <div class = "row form-group"> </div>
+	
+  
+  <div class = "row form-group"> </div>
+	
+  
+  <div class = "row form-group"> </div>
+	
+	  
+  <div class = "row from-group"> </div>
+	
+</div>
+	
+	</div>
+  <div class="card-footer"> </div> 
+
+
+</form>
+</section>
+-->
+
+</html>
