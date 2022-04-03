@@ -29,7 +29,7 @@ var saison = document.getElementById("saison");
 var intern_extern = document.getElementById("intern_extern");
 var anzahl_urlaubstage = document.getElementById("anzahl_urlaubstage");
 var anzahl_arbeitstage = document.getElementById("anzahl_arbeitstage");
-
+var anzahl_bonuspunkte = document.getElementById("anzahl_bonuspunkte");
 var result = document.getElementById("result")
 
 
@@ -37,6 +37,7 @@ saison.addEventListener("change",berechne_preis);
 intern_extern.addEventListener("change",berechne_preis);
 anzahl_arbeitstage.addEventListener("input", berechne_preis);
 anzahl_urlaubstage.addEventListener("input", berechne_preis);
+anzahl_bonuspunkte.addEventListener("input", berechne_preis);
 
 }
 
@@ -52,11 +53,16 @@ var preis_urlaubstage = (csv_preismodell[intern_extern.value][tmp_index] )*anzah
 var preis_arbeitstage = (csv_preismodell.arbeitstarif[tmp_index] )*anzahl_arbeitstage.value
 
 
-var add = preis_arbeitstage + preis_urlaubstage
+var add = preis_arbeitstage + preis_urlaubstage - 20*anzahl_bonuspunkte.value
 
-
+if(add>0){
 result.innerHTML = "Die Summe aus Arbeits- und Urlaubstagen beträgt " + add + " euro";
+
 	
+}else{
+    result.innerHTML = "Die Summe aus Arbeits- und Urlaubstagen beträgt " + 0 + " euro";
+
+}
 }
 
 
