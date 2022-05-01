@@ -26,6 +26,13 @@
   color: white;
 }
 
+#saison_text {
+  font-weight: bold;
+}
+
+#tarif_text {
+  font-weight: bold;
+}
 body {
 	
 	background-color:#ffffff!important;
