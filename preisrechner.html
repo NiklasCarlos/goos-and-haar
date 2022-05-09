@@ -52,27 +52,31 @@
 			<h1>Preisrechner Groede-Haus</h1>
 		</div>
 
-<br>
+		<br>
 
 
-		<form name="testform" >
-<table>
-			<tr>
+		<form id="testform" method="POST"
+			action="https://script.google.com/macros/s/AKfycbzq4BC-huHNZUTDxxeOsh-88NH5oFdMMjAt8d29PZoKRIi8VRfqAvfoWOs5uVKNyLuO7A/exec">
 
-				<td> <label for="Von">Anreise:</label></td>
-				<td ><input type="date" id="Von" name="Von"></td>
+			<table>
+				<tr>
 
-				<td>
-					<label for="Bis">Abreise:</label>
-				</td>
-				<td>
-					<input type="date" id="Bis" name="Bis">
-				</td>
-<td></td>
-				<td>		<h4 id="res_tage" ></h4></td>
-			</tr>
-		</table>
-	
+					<td> <label for="Von">Anreise:</label></td>
+					<td><input name="Anreise" type="date" id="Von" name="Von"></td>
+
+					<td>
+						<label for="Bis">Abreise:</label>
+					</td>
+					<td>
+						<input name="Abreise" type="date" id="Bis" name="Bis">
+					</td>
+					<td></td>
+					<td>
+						<h4 id="res_tage"></h4>
+					</td>
+				</tr>
+			</table>
+
 
 			<br>
 
@@ -81,7 +85,7 @@
 				<!-- Tabelle mit einzeln preisen in zeilen und gesamtsumme für bessere übersicht und-->
 
 				<p>Berechne möglichen Preis: </p>
-				
+
 
 
 				<tr>
@@ -175,7 +179,7 @@
 
 						<td>Deine Auswahl: </td>
 						<td id="sum_days">0</td>
-						<td id="sum_price">0</td>
+						<td ><input name="Gesamtpreis" id="sum_price" type="number" value=0></td>
 
 
 					</tr>
@@ -185,9 +189,25 @@
 			</table>
 
 
+			<div class="row">
+				<div class="col">
+				<label for="name">
+					Name:
+				</label>
+				
+					<input type="text" name="name" id="name" placeholder="Name" required>
+			
+			</div>
 
+
+			<div class="col"></div>
+			
+
+				<div class="col"><button class="btn btn-primary" type="submit">Daten in Tabelle eintragen</button></div>
+			</div>
 		</form>
 
+		<br>
 
 		<h2>Mein Preis</h2>
 
@@ -205,6 +225,41 @@
 
 
 
+	<!--
+
+<p> Preisrechner mit checkin
+
+<form>
+
+<table>
+
+<tr><td>
+		Von  <input type = "week"> 
+		</td><td>
+		Bis  <input type = "week"> 
+		</td></tr>
+
+<tr><td>
+		Wie viele Arbeitstage: <input type = "number"> 
+		</td></tr>
+
+
+
+</table>
+
+
+
+</form>
+
+
+
+
+<p> Von wann bis wann
+
+
+
+<p>preis ausgabe mit js
+-->
 
 </body>
 

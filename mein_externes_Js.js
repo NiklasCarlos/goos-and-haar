@@ -56,11 +56,26 @@ anzahl_arbeitstage.addEventListener("input", berechne_preis);
 anzahl_urlaubstage.addEventListener("input", berechne_preis);
 anzahl_bonuspunkte.addEventListener("input", berechne_preis);
 
-vonDate.addEventListener("input", berechne_Tage);
+vonDate.addEventListener("input", add_Bis);
 bisDate.addEventListener("input", berechne_Tage);
 
 
+function add_Bis(){
 
+    
+
+    if(!isNaN(new Date(document.getElementById("Von").value))){
+
+        console.log("test kat feature")
+        document.getElementById("Bis").value =  document.getElementById("Von").value
+      
+        document.getElementById("res_tage").innerHTML = "Deine Anzahl an Tagen beträgt: 0" 
+
+
+    }
+ 
+
+}
 
 
 
@@ -85,7 +100,7 @@ console.log(bisDate.value);
     console.log(new Date(document.getElementById("Bis").value));
     console.log("von " + !isNaN(new Date(document.getElementById("Von").value)));
     console.log( "bis " + !isNaN(new Date(document.getElementById("Bis").value)));
- 
+
 
     console.log("vor if")
 if(!isNaN(new Date(document.getElementById("Von").value)) && !isNaN(new Date(document.getElementById("Bis").value))){
@@ -127,7 +142,8 @@ if(add>0){
     document.getElementById("sum_anz_atage").innerHTML = preis_arbeitstage;
     document.getElementById("sum_anz_bpkt").innerHTML = (-1)*20*anzahl_bonuspunkte.value;
     document.getElementById("sum_days").innerHTML =  (parseInt(anzahl_urlaubstage.value)+parseInt(anzahl_arbeitstage.value));
-    document.getElementById("sum_price").innerHTML = add;
+    document.getElementById("sum_price").value = add;
+    console.log(document.getElementById("sum_price").value)
 
 result.innerHTML = "Die Summe aus Arbeits- und Urlaubstagen beträgt " + add + " €" ;
 
