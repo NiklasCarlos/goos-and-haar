@@ -1,3 +1,3 @@
 # gos-and-haar
 
-# find website https://niklascarlos1994.github.io/gos-and-haar/index.html
+holiday house website
