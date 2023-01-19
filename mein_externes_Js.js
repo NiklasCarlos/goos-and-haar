@@ -142,16 +142,17 @@ if(add>0){
     document.getElementById("sum_anz_utage").innerHTML = preis_urlaubstage;
    // document.getElementById("sum_anz_atage").innerHTML = preis_arbeitstage;
     document.getElementById("sum_anz_bpkt").innerHTML = (-1)*20*anzahl_bonuspunkte.value;
-    document.getElementById("sum_days").innerHTML =  (parseInt(anzahl_urlaubstage.value)+parseInt(anzahl_arbeitstage.value));
+    //document.getElementById("sum_days").innerHTML =  (parseInt(anzahl_urlaubstage.value)+parseInt(anzahl_arbeitstage.value));
+    document.getElementById("sum_days").innerHTML =  (parseInt(anzahl_urlaubstage.value));
     document.getElementById("sum_price").value = add;
     console.log(document.getElementById("sum_price").value)
 
-result.innerHTML = "Die Summe aus Arbeits- und Urlaubstagen beträgt " + add + " €" ;
+result.innerHTML = "Die Summe aus Übernachtungen und Bonuspunkten beträgt " + add + " €" ;
 
 
 	
 }else{
-    result.innerHTML = "Die Summe aus Arbeits- und Urlaubstagen beträgt " + 0 + " €";
+    result.innerHTML = "Die Summe aus Übernachtungen- und Bonuspunkten beträgt " + 0 + " €";
 
     document.getElementById("sum_anz_bpkt").innerHTML = (-1)*20*anzahl_bonuspunkte.value;
     document.getElementById("sum_price").innerHTML = 0;
