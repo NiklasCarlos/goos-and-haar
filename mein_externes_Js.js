@@ -130,6 +130,8 @@ var tmp_index=csv_preismodell.saison.indexOf(saison.value)
 
 var preis_urlaubstage = (csv_preismodell[intern_extern.value][tmp_index] )*anzahl_urlaubstage.value
 
+//preis pro nacht eintragen in col
+document.getElementById("preis_pro_nacht").innerHTML = (csv_preismodell[intern_extern.value][tmp_index] );
 //var preis_arbeitstage = (csv_preismodell.arbeitstarif[tmp_index] )*anzahl_arbeitstage.value
 //var add = preis_arbeitstage + preis_urlaubstage - 20*anzahl_bonuspunkte.value
 
