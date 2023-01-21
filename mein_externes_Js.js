@@ -18,6 +18,8 @@ saison:["Sommerferien", "Silvester","Osterferien", "Herbstferien", "Offseason"],
 intern:[100,70,70,70,50 ],
 	
 extern:[110,80,80,80,60],
+
+sozial:[10,10,10,10,10]
 	
 //arbeitstarif:[70,40,40,40,20]
 	
@@ -45,19 +47,44 @@ var result_sum_anz_utage= document.getElementById("sum_anz_utage");
 var result_anzahl_bonuspunkte = document.getElementById("sum_anz_bpkt");
 var result_sum_days = document.getElementById("sum_days");
 var result_sum_price = document.getElementById("sum_price");
+
+var anz_perso = document.getElementById("anzahl_personen");
+
 console.log(result);
 console.log(result_sum_days);
+
 
 
 //add eventlistener
 saison.addEventListener("change",berechne_preis);
 intern_extern.addEventListener("change",berechne_preis);
+intern_extern.addEventListener("change",addElementAnzahlPersonen);
 //anzahl_arbeitstage.addEventListener("input", berechne_preis);
 anzahl_urlaubstage.addEventListener("input", berechne_preis);
 anzahl_bonuspunkte.addEventListener("input", berechne_preis);
+anz_perso.addEventListener("input", berechne_preis);
 
 vonDate.addEventListener("input", add_Bis);
 bisDate.addEventListener("input", berechne_Tage);
+
+
+
+function addElementAnzahlPersonen(){
+    var x = document.getElementById("anzahl_personen_row");
+      
+    if(intern_extern.value === 'sozial'){
+         if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+    }else{
+        x.style.display = "none";
+    }
+
+  
+
+}
 
 
 function add_Bis(){
@@ -128,15 +155,28 @@ function berechne_preis(){
 	
 var tmp_index=csv_preismodell.saison.indexOf(saison.value)
 
-var preis_urlaubstage = (csv_preismodell[intern_extern.value][tmp_index] )*anzahl_urlaubstage.value
+var anz_persoNeu = document.getElementById("anzahl_personen").value;
 
+if(intern_extern.value === 'sozial'){
+var preis_urlaubstage = (csv_preismodell[intern_extern.value][tmp_index] )*anzahl_urlaubstage.value*anz_persoNeu;
+//preis pro nacht eintragen in col
+document.getElementById("preis_pro_nacht").innerHTML = (csv_preismodell[intern_extern.value][tmp_index] )*anz_persoNeu;
+
+}else{
+    var preis_urlaubstage = (csv_preismodell[intern_extern.value][tmp_index] )*anzahl_urlaubstage.value
 //preis pro nacht eintragen in col
 document.getElementById("preis_pro_nacht").innerHTML = (csv_preismodell[intern_extern.value][tmp_index] );
+
+}
 //var preis_arbeitstage = (csv_preismodell.arbeitstarif[tmp_index] )*anzahl_arbeitstage.value
 //var add = preis_arbeitstage + preis_urlaubstage - 20*anzahl_bonuspunkte.value
 
 
-var add =  preis_urlaubstage - 20*anzahl_bonuspunkte.value
+
+
+var add =  preis_urlaubstage - 20*anzahl_bonuspunkte.value;
+
+
 
 
 

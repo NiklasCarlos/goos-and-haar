@@ -111,16 +111,23 @@
 					</td>
 
 					<td id="tarif_text">
-						Tarif (Intern,Extern, evtl Student etc):
+						Tarif (Intern,Extern, evtl Sozial (siehe Foto) etc):
 					</td>
 					<td>
 						<select name="intern_extern" id="intern_extern" value="intern">
 							<option selected="selected" value="intern">Intern</option>
 							<option value="extern">Extern</option>
+							<option value="sozial">Sozial</option>
 							<!--<option value = "student">Student</option>
 			<option value = "rabatt(knapp bei kasse)">Rabatt</option>-->
 						</select>
 					</td>
+				</tr>
+
+				<tr id = "anzahl_personen_row" style="display: none;">
+					<td>Anzahl Personen</td>
+					<td id="anzahl_personen_col"><input name="anzahl_personen" id="anzahl_personen" type="number" value=1 min=1></input></td>
+					<td></td>
 				</tr>
 
 				<tr>
