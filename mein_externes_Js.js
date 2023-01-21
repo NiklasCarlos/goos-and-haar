@@ -109,11 +109,12 @@ if(!isNaN(new Date(document.getElementById("Von").value)) && !isNaN(new Date(doc
     var abreise = new Date(document.getElementById("Bis").value);
 
     console.log("rechne");
-    console.log( (abreise - anreise)/1000/60/60/24) 
+    console.log( (abreise - anreise)/1000/60/60/24) ;
 var res_tage = (abreise - anreise)/1000/60/60/24;
 
-document.getElementById("res_tage").innerHTML = "Deine Anzahl an Übernachtungen beträgt: " + res_tage
-
+document.getElementById("anzahl_urlaubstage").value = res_tage;
+document.getElementById("res_tage").innerHTML = "Deine Anzahl an Übernachtungen beträgt: " + res_tage;
+berechne_preis();
 }
 
 
